@@ -104,7 +104,7 @@ export default function App() {
     const orderNumber = Math.floor(1000 + Math.random() * 9000).toString();
     const orderDate = new Date().toLocaleString('pt-BR');
 
-    let message = `*Már's Pizzaria - Pedido #${orderNumber}*\n\n`;
+    let message = `*${PIZZARIA_CONFIG.name} - Pedido #${orderNumber}*\n\n`;
     message += `👤 *Cliente:* ${customer.name}\n`;
     message += `📞 *Telefone:* ${customer.phone}\n`;
     message += `📍 *Endereço:* ${customer.address}\n`;
@@ -151,7 +151,7 @@ export default function App() {
         <div className="mb-4">
            <img 
              src={PIZZARIA_CONFIG.logoUrl} 
-             alt="Mary's Pizzaria Logo" 
+             alt={`${PIZZARIA_CONFIG.name} Logo`} 
              className="w-48 h-48 object-contain mx-auto bg-black rounded-full p-1 shadow-2xl"
            />
         </div>
@@ -184,18 +184,39 @@ export default function App() {
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="mx-6 mb-6 p-4 bg-orange-600/10 border border-orange-600/30 rounded-xl flex items-center justify-between"
+          className="mx-6 mb-6 p-4 bg-orange-600/10 border border-orange-600/30 rounded-xl"
         >
-          <span className="text-xs text-orange-200 flex items-center gap-2">
-            <Repeat size={14} />
-            Deseja repetir o último pedido?
-          </span>
-          <button 
-            onClick={repeatLastOrder}
-            className="bg-orange-600 px-3 py-1 rounded-lg text-[10px] font-black uppercase"
-          >
-            Repetir
-          </button>
+          <div className="flex items-start justify-between mb-3">
+            <div className="flex items-start gap-2">
+              <Repeat size={16} className="text-orange-500 mt-1 shrink-0" />
+              <div>
+                <p className="text-sm font-bold text-white">
+                  Que bom tê-lo(a) de volta, <span className="text-orange-500">{lastOrder.customer.name}</span>!
+                </p>
+                <p className="text-[10px] text-zinc-400">Deseja repetir o último pedido?</p>
+              </div>
+            </div>
+            <button 
+              onClick={repeatLastOrder}
+              className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg text-[10px] font-black uppercase shadow-lg transition-colors"
+            >
+              Repetir
+            </button>
+          </div>
+          
+          <div className="bg-black/40 rounded-lg p-3 border border-white/5">
+            <p className="text-[9px] font-black uppercase text-zinc-500 mb-2 tracking-widest">Último Pedido:</p>
+            <div className="space-y-1">
+              {lastOrder.items.map((item, idx) => (
+                <div key={idx} className="text-[10px] text-zinc-300 flex justify-between">
+                  <span className="truncate pr-2">
+                    {item.product2 ? `1/2 ${item.product1.name} + 1/2 ${item.product2.name}` : item.product1.name}
+                  </span>
+                  <span className="text-yellow-500/70 shrink-0">R$ {item.totalPrice.toFixed(2).replace('.', ',')}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </motion.div>
       )}
 

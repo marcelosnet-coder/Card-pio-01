@@ -2,11 +2,11 @@
 import { Product } from './types';
 
 export const PIZZARIA_CONFIG = {
-  name: "Mary's Pizzaria",
+  name: "Mary's pizza",
   phone: "81 9 91851200",
   whatsapp: "5581991851200",
   address: "Rua dr. Sebastião Amaral, 1203 Pau Amarelo",
-  logoUrl: "/log.png.jpg", 
+  logoUrl: "https://i.pinimg.com/736x/82/b0/53/82b053cca0d30f79da2b477891e02296.jpg", 
   colors: {
     orange: "#f97316",
     yellow: "#facc15",
@@ -33,7 +33,7 @@ export const MENU_COMBOS: Product[] = [
 ];
 
 export const MENU_BEVERAGES: Product[] = [
-  { id: 'b1', name: 'Coca-Cola 1.5L', price: 15.00, imageUrl: 'https://th.bing.com/th/id/R.abcacbc0f4d45e41b8784c0cb64bf741?rik=QamqibZRQ0U4Ew&riu=http%3a%2f%2fcompraenavi.com%2fweb%2fimage%2fproduct.template%2f1484%2fimage&ehk=ygnh92hnrODRhsJWWGi1pIGJMHVbmeYBn75mCgkWFws%3d&risl=&pid=ImgRaw&r=0', category: 'BEVERAGE' },
+  { id: 'b1', name: 'Coca-Cola 1.5L', price: 12.00, imageUrl: 'https://th.bing.com/th/id/R.abcacbc0f4d45e41b8784c0cb64bf741?rik=QamqibZRQ0U4Ew&riu=http%3a%2f%2fcompraenavi.com%2fweb%2fimage%2fproduct.template%2f1484%2fimage&ehk=ygnh92hnrODRhsJWWGi1pIGJMHVbmeYBn75mCgkWFws%3d&risl=&pid=ImgRaw&r=0', category: 'BEVERAGE' },
   { id: 'b2', name: 'Guaraná Antarctica 1L', price: 8.00, imageUrl: 'https://m.magazineluiza.com.br/a-static/420x420/refrigerante-guarana-original-antarctica-1-litro/mercadinhodotiao/5f22f40c361611ee87d54201ac18502e/e97fde1e92d175dd01c2c4b41342a240.jpeg', category: 'BEVERAGE' },
   { id: 'b3', name: 'Kuat 2L', price: 12.00, imageUrl: 'https://th.bing.com/th/id/OIP.GYVrMTBKGQu4hlzSIHwOMQHaHa?w=196&h=196&c=7&r=0&o=7&pid=1.7&rm=3', category: 'BEVERAGE' },
 ];

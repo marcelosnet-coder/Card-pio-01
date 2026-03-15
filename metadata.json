@@ -1,6 +1,6 @@
 {
-  "name": "Mary's Pizzaria - Pedido Online",
-  "description": "Aplicativo de pedidos online para a Mary\u0027s Pizzaria com sistema de meio a meio, combos e integração com WhatsApp.",
+  "name": "Mary's pizza - Cardápio Online",
+  "description": "Aplicativo de pedidos online para a Mary's pizza com sistema de meio a meio, combos e integração com WhatsApp.",
   "requestFramePermissions": [
     "geolocation"
   ]
